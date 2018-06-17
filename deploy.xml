@@ -1,0 +1,12 @@
+<project default="startserver">
+<target name="deploy">
+<copy file="/home/geetha/.m2/repository/com/onlinetraining/geestract/1.0-SNAPSHOT/geestract-1.0-SNAPSHOT.war" todir="/home/geetha/distros/apache-tomcat-8.5.23/webapps/" overwrite="true">
+</copy>
+</target>
+<target name="startserver" depends="deploy">
+<exec executable="/bin/bash">
+<arg value="/home/geetha/distros/apache-tomcat-8.5.23/bin/startup.sh"/>
+</exec>
+</target>
+</project>
+
